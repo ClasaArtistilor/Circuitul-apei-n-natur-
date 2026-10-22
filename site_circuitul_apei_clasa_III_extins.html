@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aventura picăturii de apă – clasa a III-a</title>
+<style>
+:root{--blue:#168bd2;--navy:#10336f;--sky:#eaf8ff;--green:#2e9d55;--yellow:#ffe46b;--pink:#f35a86;--purple:#8454d6}
+*{box-sizing:border-box}body{margin:0;font-family: "Trebuchet MS",Arial,sans-serif;background:linear-gradient(#dff6ff,#fffdf0);color:#18345f}
+header{padding:26px 16px 22px;text-align:center;background:linear-gradient(120deg,#1ca8e7,#72d9ee);color:white;border-bottom:8px solid #ffe36a}
+header h1{font-size:clamp(1.8rem,5vw,3rem);margin:0 0 8px;text-shadow:2px 3px #1263a0}header p{font-size:1.12rem;margin:0;font-weight:700}
+nav{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;padding:14px;background:#fff}
+nav button,.action{border:0;border-radius:999px;padding:11px 17px;font-weight:800;font-size:1rem;cursor:pointer;background:#e6f5ff;color:var(--navy);box-shadow:0 3px 0 #b5dff4}nav button.active,nav button:hover{background:var(--yellow)}
+main{max-width:1100px;margin:20px auto;padding:0 16px}.panel{background:white;border:3px solid #b8e8fa;border-radius:24px;padding:20px;margin:16px 0;box-shadow:0 5px 0 #d1edf8}.panel h2{margin-top:0;color:var(--navy);font-size:1.6rem}.intro{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.mini{border-radius:18px;padding:15px;background:#f0faff;border:2px solid #b9e6fb}.emoji{font-size:2.7rem;display:block;text-align:center}.mini h3{text-align:center;margin:7px 0;color:#145c9e}.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}.step{padding:15px;border-radius:18px;border:2px solid #d4e7ff;background:#f6fbff}.step:nth-child(1){border-color:#ffb34f}.step:nth-child(2){border-color:#b89bf1}.step:nth-child(3){border-color:#f49bb5}.step:nth-child(4){border-color:#7fcf8f}.step h3{margin:0 0 7px}.arrow{text-align:center;font-size:1.5rem;color:#e64e3d;font-weight:bold}.states{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.state{border-radius:18px;padding:16px;background:#f5fbff;border:3px solid #74c8f1}.state:nth-child(2){background:#f8f2ff;border-color:#bba0f0}.state:nth-child(3){background:#fff2f5;border-color:#f6a0b7}.state h3{margin:0 0 8px}.state .emoji{font-size:2.4rem}.state ul{padding-left:20px;margin-bottom:0}.callout{background:#fff5a9;border-radius:18px;padding:15px;font-weight:700;text-align:center;margin-top:14px}.hidden{display:none}.quiz-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-weight:800;color:#24608f}.progress{height:12px;background:#e6f2fa;border-radius:20px;overflow:hidden;margin:12px 0 20px}.bar{height:100%;width:0;background:linear-gradient(90deg,#2ebd75,#ffe15c);transition:width .3s}.question{font-size:1.35rem;font-weight:800;line-height:1.4;margin:16px 0}.answers{display:grid;gap:10px}.answer{background:#f3faff;border:2px solid #b9dff4;border-radius:15px;padding:13px;text-align:left;font-size:1.05rem;font-weight:700;color:#18345f;cursor:pointer}.answer:hover:not(:disabled){background:#fff6b7;border-color:#eacb42}.answer.correct{background:#d9f8df;border-color:#43b66a}.answer.wrong{background:#ffe1e6;border-color:#e96c82}.feedback{font-weight:800;min-height:28px;margin:12px 0}.controls{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.action{background:#168bd2;color:white;box-shadow:0 4px 0 #0d639b}.action.secondary{background:#ffe46b;color:#24416b;box-shadow:0 4px 0 #d6b93b}.action:disabled{opacity:.45;cursor:not-allowed}.result{text-align:center;padding:16px}.result .big{font-size:3rem}.result h3{font-size:1.7rem;color:var(--navy)}footer{text-align:center;padding:22px;color:#47708a;font-size:.95rem}
+@media(max-width:600px){.panel{padding:15px}.question{font-size:1.15rem}}
+</style></head>
+<body>
+<header><h1>💧 Aventura picăturii de apă</h1><p>Învață, descoperă și verifică ce știi! · Clasa a III-a</p></header>
+<nav><button class="active" data-tab="invata">📘 Învățăm</button><button data-tab="circuit">🌦️ Circuitul apei</button><button data-tab="stari">🧊 Stările apei</button><button data-tab="quiz">🎯 Test grilă</button><button data-tab="jocuri">🧩 Alte exerciții</button></nav>
+<main>
+<section id="invata" class="tab">
+<div class="panel"><h2>Salut, mic explorator! 👋</h2><p>Apa se mișcă mereu în natură și se poate transforma. Citește cartonașele, apoi mergi la test și alege răspunsul corect dintre cele trei variante.</p><div class="intro">
+<div class="mini"><span class="emoji">☀️💧</span><h3>Evaporare</h3><p>Soarele încălzește apa, iar aceasta se transformă în vapori care se ridică în aer.</p></div>
+<div class="mini"><span class="emoji">☁️</span><h3>Condensare</h3><p>Vaporii se răcesc și formează picături mici de apă. Așa se formează norii.</p></div>
+<div class="mini"><span class="emoji">🌧️❄️</span><h3>Precipitații</h3><p>Apa cade din nori sub formă de ploaie, ninsoare sau grindină.</p></div>
+<div class="mini"><span class="emoji">🏞️</span><h3>Întoarcerea în natură</h3><p>Apa ajunge în râuri, lacuri, mări și oceane. O parte se infiltrează în sol.</p></div>
+</div></div></section>
+<section id="circuit" class="tab hidden"><div class="panel"><h2>🌦️ Circuitul apei în natură</h2><div class="steps">
+<div class="step"><h3>1. ☀️ Evaporare</h3><p>Soarele încălzește apa de la suprafața lacurilor, mărilor și oceanelor. Apa se transformă în vapori.</p></div><div class="step"><h3>2. ☁️ Condensare</h3><p>Vaporii de apă se răcesc, se adună și formează picături mici. Astfel apar norii.</p></div><div class="step"><h3>3. 🌧️ Precipitații</h3><p>Picăturile cad pe Pământ ca ploaie, iar când este foarte frig, apa poate cădea ca ninsoare sau grindină.</p></div><div class="step"><h3>4. 🏞️ Întoarcerea în natură</h3><p>Apa curge prin pâraie și râuri spre lacuri, mări și oceane. O parte pătrunde în sol.</p></div></div><div class="arrow">☀️ → ☁️ → 🌧️ → 🏞️ → ☀️</div><div class="callout">De reținut: Circuitul apei este un proces continuu. Apa circulă și se transformă, apoi revine în natură.</div></div></section>
+<section id="stari" class="tab hidden"><div class="panel"><h2>🧊 Cele trei stări de agregare ale apei</h2><div class="states">
+<div class="state"><span class="emoji">🌊</span><h3>Stare lichidă – APA</h3><ul><li>Curge.</li><li>Nu are formă proprie; ia forma vasului.</li><li>Se găsește în râuri, lacuri, mări și oceane.</li></ul></div>
+<div class="state"><span class="emoji">🧊</span><h3>Stare solidă – GHEAȚA</h3><ul><li>Are formă proprie.</li><li>Nu curge.</li><li>Se formează când apa îngheață, la temperaturi scăzute.</li></ul></div>
+<div class="state"><span class="emoji">♨️</span><h3>Stare gazoasă – VAPORII</h3><ul><li>Nu au formă proprie.</li><li>Sunt răspândiți în aer și, de obicei, nu se văd.</li><li>Se formează prin evaporare.</li></ul></div></div>
+<h2 style="margin-top:22px">🔄 Cum se transformă apa?</h2><div class="steps"><div class="step"><h3>🧊 → 💧 Topire</h3><p>Gheața se încălzește și devine apă lichidă.</p></div><div class="step"><h3>💧 → 🧊 Solidificare</h3><p>Apa se răcește suficient și devine gheață.</p></div><div class="step"><h3>💧 → ♨️ Evaporare</h3><p>Apa se încălzește și se transformă în vapori.</p></div><div class="step"><h3>♨️ → 💧 Condensare</h3><p>Vaporii se răcesc și formează picături de apă.</p></div></div><div class="callout">Mic truc: topirea înseamnă solid → lichid, iar solidificarea înseamnă lichid → solid.</div></div></section>
+<section id="quiz" class="tab hidden"><div class="panel"><h2>🎯 Testul picăturii istețe</h2><p>Alege o singură variantă pentru fiecare întrebare. La final vei afla câte răspunsuri ai nimerit.</p><div id="quizArea"><div class="quiz-top"><span id="counter">Întrebarea 1 din 12</span><span id="scoreLive">⭐ Scor: 0</span></div><div class="progress"><div class="bar" id="bar"></div></div><div class="question" id="question"></div><div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div><div class="controls"><button class="action" id="nextBtn" disabled>Următoarea întrebare ➜</button><button class="action secondary" id="restartBtn">Reîncepe testul ↻</button></div></div><div id="result" class="result hidden"></div></div></section>
+
+<section id="jocuri" class="tab hidden">
+ <div class="panel"><h2>🧩 Atelierul de exersare</h2><p>Rezolvă cele patru tipuri de exerciții. Apasă butonul de verificare pentru a vedea răspunsurile corecte.</p></div>
+ <div class="panel"><h2>1. Adevărat sau fals? ✅❌</h2><p>Alege „Adevărat” sau „Fals” pentru fiecare enunț.</p>
+ <div id="tfList"></div><div class="controls"><button class="action" onclick="checkTF()">Verifică răspunsurile</button><button class="action secondary" onclick="resetTF()">Reia</button></div><div class="feedback" id="tfFeedback" aria-live="polite"></div></div>
+ <div class="panel"><h2>2. Completează propozițiile lacunare ✏️</h2><p>Alege cuvântul potrivit din lista derulantă.</p>
+ <div id="blankList"></div><div class="controls"><button class="action" onclick="checkBlanks()">Verifică răspunsurile</button><button class="action secondary" onclick="resetBlanks()">Reia</button></div><div class="feedback" id="blankFeedback" aria-live="polite"></div></div>
+ <div class="panel"><h2>3. Exercițiu de asocieri 🔗</h2><p>Asociază fiecare termen cu explicația potrivită.</p>
+ <div id="matchList"></div><div class="controls"><button class="action" onclick="checkMatch()">Verifică asocierile</button><button class="action secondary" onclick="resetMatch()">Reia</button></div><div class="feedback" id="matchFeedback" aria-live="polite"></div></div>
+ <div class="panel"><h2>4. Găsește intrusul! 🕵️</h2><p>În fiecare grup, alege varianta care nu se potrivește.</p>
+ <div id="distractorList"></div><div class="controls"><button class="action" onclick="checkDistractors()">Verifică răspunsurile</button><button class="action secondary" onclick="resetDistractors()">Reia</button></div><div class="feedback" id="distractorFeedback" aria-live="polite"></div></div>
+</section>
+</main><footer>💧 Învață pas cu pas. Fiecare încercare te ajută să devii un explorator mai bun!</footer>
+<script>
+const questions=[
+{q:'Ce încălzește apa și ajută la evaporare?',a:['Soarele','Luna','Vântul rece'],c:0,e:'Soarele încălzește apa de la suprafața lacurilor, mărilor și oceanelor.'},
+{q:'Cum se numește transformarea apei lichide în vapori?',a:['Condensare','Evaporare','Topire'],c:1,e:'Prin evaporare, apa lichidă se transformă în vapori.'},
+{q:'Cum se formează norii?',a:['Vaporii se răcesc și formează picături mici','Gheața se transformă direct în pământ','Apa dispare pentru totdeauna'],c:0,e:'La condensare, vaporii se răcesc și formează picături mici de apă.'},
+{q:'Cum se numește apa care cade din nori?',a:['Evaporare','Condensare','Precipitație'],c:2,e:'Ploaia, ninsoarea și grindina sunt forme de precipitații.'},
+{q:'Unde ajunge apa după ce curge prin pâraie și râuri?',a:['În lacuri, mări și oceane','În Soare','Nu mai ajunge nicăieri'],c:0,e:'Apa curge prin pâraie și râuri și ajunge în lacuri, mări și oceane.'},
+{q:'În ce stare de agregare se află gheața?',a:['Lichidă','Solidă','Gazoasă'],c:1,e:'Gheața este apa în stare solidă.'},
+{q:'Care este o însușire a apei lichide?',a:['Are întotdeauna formă proprie','Nu curge','Curge și ia forma vasului'],c:2,e:'Apa lichidă curge și ia forma vasului în care se află.'},
+{q:'Ce se întâmplă când gheața se încălzește și devine apă?',a:['Are loc topirea','Are loc condensarea','Are loc solidificarea'],c:0,e:'Topirea este trecerea din stare solidă în stare lichidă.'},
+{q:'Cum se numește trecerea apei lichide în gheață?',a:['Evaporare','Solidificare','Topire'],c:1,e:'Prin răcire suficientă, apa se solidifică și devine gheață.'},
+{q:'Ce se întâmplă la condensare?',a:['Apa lichidă se transformă în vapori','Vaporii se răcesc și formează picături','Gheața se topește'],c:1,e:'Condensarea transformă vaporii de apă în picături lichide.'},
+{q:'Cum sunt vaporii de apă?',a:['Au formă proprie','Sunt apă în stare gazoasă','Sunt întotdeauna fulgi de zăpadă'],c:1,e:'Vaporii reprezintă apa în stare gazoasă.'},
+{q:'Care este ordinea corectă a etapelor circuitului apei?',a:['Precipitații → evaporare → condensare','Condensare → topire → solidificare','Evaporare → condensare → precipitații'],c:2,e:'În schema simplificată: apa se evaporă, vaporii se condensează, apoi cad precipitațiile.'}
+];
+let index=0,score=0,answered=false;
+const $=id=>document.getElementById(id);
+function showQuestion(){answered=false;const item=questions[index];$('counter').textContent=`Întrebarea ${index+1} din ${questions.length}`;$('scoreLive').textContent=`⭐ Scor: ${score}`;$('bar').style.width=`${index/questions.length*100}%`;$('question').textContent=item.q;$('feedback').textContent='';$('nextBtn').disabled=true;$('nextBtn').textContent=index===questions.length-1?'Vezi rezultatul 🏆':'Următoarea întrebare ➜';$('answers').innerHTML='';item.a.forEach((ans,i)=>{const b=document.createElement('button');b.className='answer';b.textContent=String.fromCharCode(65+i)+'. '+ans;b.onclick=()=>choose(i,b);$('answers').appendChild(b)});}
+function choose(i,button){if(answered)return;answered=true;const item=questions[index];const buttons=[...$('answers').children];buttons.forEach((b,j)=>{b.disabled=true;if(j===item.c)b.classList.add('correct')});if(i===item.c){score++;$('feedback').textContent='🎉 Bravo! Răspuns corect. '+item.e;}else{button.classList.add('wrong');$('feedback').textContent='💡 Mai încearcă data viitoare! Răspunsul corect este: '+item.a[item.c]+'. '+item.e;}$('scoreLive').textContent=`⭐ Scor: ${score}`;$('bar').style.width=`${(index+1)/questions.length*100}%`;$('nextBtn').disabled=false;}
+function finish(){ $('quizArea').classList.add('hidden');$('result').classList.remove('hidden');let title,msg,emoji;if(score>=10){title='Excelent, exploratorule!';msg='Cunoști foarte bine circuitul apei și stările ei.';emoji='🏆'}else if(score>=7){title='Foarte bine!';msg='Ai înțeles multe lucruri. Recitește cartonașele și mai încearcă o dată.';emoji='🌟'}else{title='Continuă să exersezi!';msg='Privește din nou lecția, apoi reia testul. Vei reuși!';emoji='💧'}$('result').innerHTML=`<div class="big">${emoji}</div><h3>${title}</h3><p>Ai răspuns corect la <strong>${score} din ${questions.length}</strong> întrebări.</p><p>${msg}</p><button class="action" id="again">Mai încerc o dată ↻</button>`;$('again').onclick=restart;}
+function next(){if(!answered)return;if(index<questions.length-1){index++;showQuestion()}else finish()}
+function restart(){index=0;score=0;$('quizArea').classList.remove('hidden');$('result').classList.add('hidden');showQuestion()}
+$('nextBtn').onclick=next;$('restartBtn').onclick=restart;
+document.querySelectorAll('nav button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.tab').forEach(t=>t.classList.add('hidden'));$(btn.dataset.tab).classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})}));
+showQuestion();
+
+const tfItems=[
+ {q:'Soarele încălzește apa și ajută la evaporare.',a:true},
+ {q:'Condensarea are loc când vaporii se răcesc și formează picături.',a:true},
+ {q:'Gheața se află în stare gazoasă.',a:false},
+ {q:'Ploaia, ninsoarea și grindina sunt precipitații.',a:true},
+ {q:'Apa lichidă are întotdeauna o formă proprie.',a:false},
+ {q:'Prin solidificare, apa lichidă devine gheață.',a:true}
+];
+const blankItems=[
+ {q:'Apa lichidă se transformă în vapori prin ________.',a:'evaporare',opts:['evaporare','condensare','topire']},
+ {q:'Vaporii se răcesc și formează picături prin ________.',a:'condensare',opts:['solidificare','condensare','precipitație']},
+ {q:'Trecerea din stare solidă în stare lichidă se numește ________.',a:'topire',opts:['topire','evaporare','solidificare']},
+ {q:'Apa care cade din nori sub formă de ploaie sau ninsoare se numește ________.',a:'precipitație',opts:['precipitație','vaporizare','infiltrare']},
+ {q:'Apa în stare solidă se numește ________.',a:'gheață',opts:['abur','gheață','ploaie']},
+ {q:'O parte din apa de la suprafață se ________ în sol.',a:'infiltrează',opts:['infiltrează','evaporă','îngheață']}
+];
+const matchItems=[
+ {term:'Evaporare',a:'Apa lichidă se transformă în vapori.'},
+ {term:'Condensare',a:'Vaporii se răcesc și formează picături.'},
+ {term:'Precipitații',a:'Apa cade din nori sub formă de ploaie, ninsoare sau grindină.'},
+ {term:'Topire',a:'Gheața devine apă lichidă.'},
+ {term:'Solidificare',a:'Apa lichidă devine gheață.'}
+];
+const distractorItems=[
+ {q:'Care NU este o stare de agregare a apei?',opts:['Lichidă','Solidă','Strălucitoare','Gazoasă'],a:'Strălucitoare'},
+ {q:'Care NU este o formă de precipitație?',opts:['Ploaie','Ninsoare','Grindină','Evaporare'],a:'Evaporare'},
+ {q:'Care NU este o transformare a apei prezentată în lecție?',opts:['Topire','Condensare','Solidificare','Iluminare'],a:'Iluminare'},
+ {q:'Unde NU ajunge apa în circuitul descris?',opts:['În râuri','În lacuri','În mări și oceane','În Soare'],a:'În Soare'}
+];
+function renderTF(){const el=document.getElementById('tfList');el.innerHTML='';tfItems.forEach((x,i)=>{el.insertAdjacentHTML('beforeend',`<div class="mini" style="margin:8px 0"><strong>${i+1}. ${x.q}</strong><div style="margin-top:8px"><label><input type="radio" name="tf${i}" value="true"> Adevărat</label> &nbsp; <label><input type="radio" name="tf${i}" value="false"> Fals</label></div></div>`)});}
+function checkTF(){let n=0;tfItems.forEach((x,i)=>{const v=document.querySelector(`input[name="tf${i}"]:checked`);if(v&&((v.value==='true')===x.a))n++});document.getElementById('tfFeedback').textContent=`Ai răspuns corect la ${n} din ${tfItems.length} enunțuri. ${n===tfItems.length?'Excelent!':'Recitește enunțurile și încearcă din nou.'}`;}
+function resetTF(){document.querySelectorAll('#tfList input').forEach(x=>x.checked=false);document.getElementById('tfFeedback').textContent='';}
+function renderBlanks(){const el=document.getElementById('blankList');el.innerHTML='';blankItems.forEach((x,i)=>{el.insertAdjacentHTML('beforeend',`<div class="mini" style="margin:8px 0"><label for="bl${i}"><strong>${i+1}. ${x.q}</strong></label><br><select id="bl${i}" style="margin-top:8px;padding:9px;border-radius:10px;max-width:100%"><option value="">— Alege răspunsul —</option>${x.opts.map(o=>`<option>${o}</option>`).sort(()=>0).join('')}</select></div>`)});}
+function checkBlanks(){let n=0;blankItems.forEach((x,i)=>{if(document.getElementById('bl'+i).value===x.a)n++});document.getElementById('blankFeedback').textContent=`Ai completat corect ${n} din ${blankItems.length} propoziții.`;}
+function resetBlanks(){blankItems.forEach((x,i)=>document.getElementById('bl'+i).value='');document.getElementById('blankFeedback').textContent='';}
+function renderMatch(){const el=document.getElementById('matchList');el.innerHTML='';const opts=matchItems.map(x=>x.a);matchItems.forEach((x,i)=>{el.insertAdjacentHTML('beforeend',`<div class="mini" style="margin:8px 0"><strong>${i+1}. ${x.term}</strong><br><select id="ma${i}" style="margin-top:8px;padding:9px;border-radius:10px;width:100%;max-width:720px"><option value="">— Alege explicația —</option>${opts.map(o=>`<option>${o}</option>`).join('')}</select></div>`)});}
+function checkMatch(){let n=0;matchItems.forEach((x,i)=>{if(document.getElementById('ma'+i).value===x.a)n++});document.getElementById('matchFeedback').textContent=`Ai realizat corect ${n} din ${matchItems.length} asocieri.`;}
+function resetMatch(){matchItems.forEach((x,i)=>document.getElementById('ma'+i).value='');document.getElementById('matchFeedback').textContent='';}
+function renderDistractors(){const el=document.getElementById('distractorList');el.innerHTML='';distractorItems.forEach((x,i)=>{el.insertAdjacentHTML('beforeend',`<div class="mini" style="margin:8px 0"><strong>${i+1}. ${x.q}</strong><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:8px">${x.opts.map(o=>`<label class="answer" style="font-size:.95rem"><input type="radio" name="di${i}" value="${o}"> ${o}</label>`).join('')}</div></div>`)});}
+function checkDistractors(){let n=0;distractorItems.forEach((x,i)=>{const v=document.querySelector(`input[name="di${i}"]:checked`);if(v&&v.value===x.a)n++});document.getElementById('distractorFeedback').textContent=`Ai găsit corect ${n} din ${distractorItems.length} intruși.`;}
+function resetDistractors(){document.querySelectorAll('#distractorList input').forEach(x=>x.checked=false);document.getElementById('distractorFeedback').textContent='';}
+renderTF();renderBlanks();renderMatch();renderDistractors();
+</script></body></html>
